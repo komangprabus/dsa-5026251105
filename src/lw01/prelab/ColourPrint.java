@@ -9,9 +9,15 @@ public class ColourPrint extends PrintJob {
     @Override 
     public int calculateCharge() {
         int pages = getPages();
-        int firstPages = Math.min(pages, 10);
-        int lastPages = Math.max(pages - 10, 0);
-        return firstPages*1500 + lastPages*1000+2000;
+        int total;
+
+        if (pages <= 10) {
+            total = pages * 1500;
+        } else {
+            total = (10 * 1500) + ((pages - 10) * 1000);
+        }
+
+        return total + 2000;
     }
 
     @Override 
