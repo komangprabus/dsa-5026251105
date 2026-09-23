@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         
         Scanner sc = new Scanner(new File("washes.txt"));
-        int n = sc.nextInt();
         List<WashService> services = new ArrayList<>();
+        int a = sc.nextInt();
 
         while (sc.hasNext()) {
             String type = sc.next();
